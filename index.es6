@@ -7,6 +7,7 @@ export default class BarWrapper extends React.Component {
     classNamePrefix: React.PropTypes.string,
     children: React.PropTypes.node,
     close: React.PropTypes.bool,
+    renderCloseButton: React.PropTypes.func,
     onClose: React.PropTypes.func,
     stillRenderWhenClosed: React.PropTypes.bool,
   }
@@ -53,13 +54,14 @@ export default class BarWrapper extends React.Component {
     let closeButton = null;
 
     if (close) {
+      const CloseButtonComponent = this.props.renderCloseButton || 'span';
       closeButton = (
-        <span onClick={this.onClose}
+        <CloseButtonComponent onClick={this.onClose}
           className={closeWrapperClassNames.join(' ')}
           tabIndex={0}
         >
           <Icon icon="close" className={closeClassNames.join(' ')} />
-        </span>
+        </CloseButtonComponent>
       );
     }
 
