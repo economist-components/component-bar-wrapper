@@ -1,0 +1,7 @@
+@import './index.css';
+
+.bar-wrapper {
+  color: #fff;
+  background: #000;
+  fill: #fff;
+}

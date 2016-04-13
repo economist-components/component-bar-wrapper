@@ -1,10 +1,10 @@
 import React from 'react';
-import BarWrapper from '../index.es6';
-import { stub, spy } from 'sinon';
+import BarWrapper from '../src';
 
 import chai from 'chai';
 import chaiSpies from 'chai-spies';
 
+chai.should();
 chai.use(chaiSpies);
 
 describe('BarWrapper component', () => {
@@ -13,15 +13,15 @@ describe('BarWrapper component', () => {
   });
   it('renders a React element', () => {
     React.isValidElement(
-      <BarWrapper/>
+      <BarWrapper />
     ).should.equal(true);
   });
   it('respects renderCloseButton property', () => {
-    const renderCloseButton = (props) => (<p {...props} />);
+    function renderCloseButton(props) {
+      return <p {...props} />;
+    }
     const barWrapper = new BarWrapper({ close: true, renderCloseButton });
-
     const closeButton = barWrapper.render().props.children.props.children[0];
-
     closeButton.type.should.equal(renderCloseButton);
   });
 });
