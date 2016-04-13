@@ -1,17 +1,12 @@
 import React from 'react';
 import BarWrapper from './';
 
-// this ensures the cookie is never written
-const fakeCookie = {
-  load: () => {},
-  save: () => {},
-};
+function onClose() {
+  alert('you just clicked close!'); // eslint-disable-line
+}
+
 export default (
-  <BarWrapper onClose={
-    () => {
-      alert('you just clicked close!');
-    }
-  }>
+  <BarWrapper onClose={onClose}>
     Hello! I'm inside a barwrapper! The background and this text color came from the example CSS.
   </BarWrapper>
 );
