@@ -6,7 +6,4 @@ cache:
 node_js:
   - '4'
   - stable
-after_success:
-  - travis-after-all
-  - npm run semantic-release
-  - 'npm run pages -- --repo https://${GH_TOKEN}@github.com/economist-components/component-bar-wrapper.git'
+after_success: 'travis-after-all && npm run semantic-release && npm run pages -- --repo https://${GH_TOKEN}@github.com/economist-components/component-bar-wrapper.git'
