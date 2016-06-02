@@ -1,15 +1,12 @@
-@import '@economist/component-typography';
-@import '@economist/component-palette';
-@import '@economist/component-grid';
 @import '@economist/component-icon';
 
 .bar-wrapper {
   padding:
-    var(--barwrapper-vertical-padding, var(--grid-spacing-sheep))
-    var(--barwrapper-horizontal-padding, var(--grid-gutter-s));
-  font-family: var(--barwrapper-font-family, var(--fontfamily-sans));
-  font-size: var(--barwrapper-font-size, var(--text-size-step--2));
-  line-height: var(--barwrapper-line-height, var(--text-line-height-sans-on-step--2));
+    var(--barwrapper-vertical-padding, var(--grid-spacing-sheep, 1.45em))
+    var(--barwrapper-horizontal-padding, var(--grid-gutter-s, 1rem));
+  font-family: var(--barwrapper-font-family, var(--fontfamily-sans, sans-serif));
+  font-size: var(--barwrapper-font-size, var(--text-size-step--2, 1em));
+  line-height: var(--barwrapper-line-height, var(--text-line-height-sans-on-step--2, 1.34));
 }
 
 .bar-wrapper--close {
@@ -35,5 +32,5 @@
   position: relative;
   max-width: var(--barwrapper-max-width, 1000px);
   margin: auto;
-  padding-right: var(--barwrapper-close-right-spacing, var(--grid-spacing-camel));
+  padding-right: var(--barwrapper-close-right-spacing, var(--grid-spacing-camel, 2.5em));
 }
