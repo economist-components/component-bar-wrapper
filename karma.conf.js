@@ -93,7 +93,7 @@ module.exports = function configureKarma(config) {
       sauceLabs: {
         testName: packageJson.name,
         recordVideo: true,
-        startConnect: false,
+        startConnect: true,
         build: configureBuildValue(),
       },
     });
