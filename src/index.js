@@ -48,6 +48,7 @@ export default class BarWrapper extends React.Component {
         <CloseButtonComponent onClick={this.handleOnClick}
           className={closeWrapperClassNames.join(' ')}
           tabIndex={0}
+          role="button"
         >
           <Icon icon="close" className={closeClassNames.join(' ')} />
         </CloseButtonComponent>
