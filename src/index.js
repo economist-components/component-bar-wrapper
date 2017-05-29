@@ -18,6 +18,11 @@ export default class BarWrapper extends React.Component {
     }
     this.setState({ closed: true });
   }
+  handleKeyDown(event) {
+    if (event.code === 'Enter' || event.code === 'Space') {
+      this.handleOnClick(event);
+    }
+  }
   render() {
     const { className, classNamePrefix, children, close, stillRenderWhenClosed } = this.props;
     let classNames = [ 'bar-wrapper' ];
@@ -45,7 +50,9 @@ export default class BarWrapper extends React.Component {
     if (close) {
       const CloseButtonComponent = this.props.renderCloseButton || 'span';
       closeButton = (
-        <CloseButtonComponent onClick={this.handleOnClick}
+        <CloseButtonComponent
+          onClick={this.handleOnClick}
+          onKeyDown={this.handleKeyDown}
           className={closeWrapperClassNames.join(' ')}
           tabIndex={0}
           role="button"
