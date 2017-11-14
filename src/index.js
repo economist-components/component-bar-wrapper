@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '@economist/component-icon';
+import PropTypes from 'prop-types';
 
 export default class BarWrapper extends React.Component {
   constructor(...args) {
@@ -75,13 +76,13 @@ export default class BarWrapper extends React.Component {
 
 if (process.env.NODE_ENV !== 'production') {
   BarWrapper.propTypes = {
-    className: React.PropTypes.string,
-    classNamePrefix: React.PropTypes.string,
-    children: React.PropTypes.node,
-    close: React.PropTypes.bool,
-    renderCloseButton: React.PropTypes.func,
-    onClose: React.PropTypes.func,
-    stillRenderWhenClosed: React.PropTypes.bool,
+    className: PropTypes.string,
+    classNamePrefix: PropTypes.string,
+    children: PropTypes.node,
+    close: PropTypes.bool,
+    renderCloseButton: PropTypes.func,
+    onClose: PropTypes.func,
+    stillRenderWhenClosed: PropTypes.bool,
   };
 }
 
